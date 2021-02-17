@@ -2141,7 +2141,7 @@ default), and optionally <var>sharable</var> (a boolean, true by default), run t
   <p>If <var>sharable</var> is true, then:
 
   <ol>
-   <li><p>Let <var>connections</var> be a set of <a>connection</a> in the user agent's
+   <li><p>Let <var>connections</var> be a set of <a>connection</a>s in the user agent's
    <a>connection pool</a> each of whose <b>key</b> is <var>key</var>, <b>origin</b> is
    <var>origin</var>, and <b>credentials</b> is <var>credentials</var>.
 
