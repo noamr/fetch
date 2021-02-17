@@ -90,12 +90,12 @@ url:https://tools.ietf.org/html/draft-ietf-httpbis-header-structure#section-4.2;
         "publisher": "IETF",
         "title": "Structured Field Values for HTTP"
     },
-    "HTTP/3": {
+    "HTTP3": {
         "authors": ["M. Bishop, Ed."],
         "href": "https://tools.ietf.org/html/draft-ietf-quic-http",
         "publisher": "IETF",
         "title": "Hypertext Transfer Protocol Version 3 (HTTP/3)"
-    },
+    }
 }
 </pre>
 
@@ -2163,7 +2163,7 @@ default), and optionally <var>sharable</var> (a boolean, true by default), run t
     <var>origin</var>. [[!HTTP]] [[!HTTP-SEMANTICS]] [[!HTTP-COND]] [[!HTTP-CACHING]] [[!HTTP-AUTH]]
     [[!TLS]]
 
-    <p>If <var>forHTTP3</var> is true, then establish an HTTP/3 connection. [[!HTTP/3]]
+    <p>If <var>forHTTP3</var> is true, then establish an HTTP/3 connection. [[!HTTP3]]
 
     <p>If <var>credentials</var> is false, then do <em>not</em> send a TLS client certificate.
 
