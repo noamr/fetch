@@ -98,7 +98,7 @@ url:https://tools.ietf.org/html/draft-ietf-httpbis-header-structure#section-4.2;
     },
     "WEBTRANSPORT-HTTP3": {
         "authors": ["V. Vasiliev"],
-        "href": "https://www.ietf.org/archive/id/draft-ietf-webtrans-http3-00.html",
+        "href": "https://tools.ietf.org/html/draft-ietf-webtrans-http3",
         "publisher": "IETF",
         "title": "WebTransport over HTTP/3"
     },
