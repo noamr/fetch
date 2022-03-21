@@ -7501,6 +7501,43 @@ constructor steps are:
    <li><p>Set <a>this</a>'s <a for=Response>response</a>'s <a for=response>body</a> and
    <var>Content-Type</var> to the result of <a for=BodyInit>extracting</a> <var>body</var>.
 
+   <li><p>Let <var>resourceInfo</var> be <a>this</a>'s <a for=Response>response</a>'s
+   <a for=response>resource info</a>.
+
+   <li>
+    <p>If <a>this</a>'s <a for=Response>response</a>'s <a for=response>body</a>'s
+    <a for=body>length</a> is null, then:
+
+    <ol>
+     <li><p>Let <var>originalStream</var> be <a>this</a>'s <a for=Response>response</a>'s
+     <a for=response>body</a>'s <a for=body>stream</a>.
+
+     <li><p>Let <var>transformStream</var> be a new {{TransformStream}}.
+
+     <li><p>Let <var>transformAlgorithm</var> given <var>chunk</var> be these steps:
+
+      <ol>
+       <li><p>Increase <var>resourceInfo</var>'s <a for="fetch resource info">encoded body size</a>
+       and <a for="fetch resource info">decoded body size</a> by <var>chunk</var>'s
+       <a for=BufferSource>byte length</a>.
+
+       <li><p><a for=ReadableStream>Enqueue</a> <var>chunk</var> in <var>transformStream</var>.
+      </ol>
+
+     <li><p>Let <var>transformStream</var> be the result of <a for=TransformStream>setting up</a> a
+     {{TransformStream}} with <var>transformAlgorithm</var>.
+
+     <li><p>Let <a>this</a>'s <a for=Response>response</a>'s
+     <a for=response>body</a>'s <a for=body>stream</a> be the result of <var>originalStream</var>
+     <a for=ReadableStream>piped through</a>
+     <var>transformStream</var>.
+    </ol>
+
+    <p>Otherwise, set <var>resourceInfo</var>'s <a for="fetch resource info">encoded body size</a>
+    and <a for="fetch resource info">decoded body size</a> to <a>this</a>'s
+    <a for=Response>response</a>'s <a for=response>body</a>'s <a for=body>length</a>.
+   </li>
+
    <li><p>If <var>Content-Type</var> is non-null and <a>this</a>'s <a for=Response>response</a>'s
    <a for=response>header list</a> <a for="header list">does not contain</a>
    `<code>Content-Type</code>`, then <a for="header list">append</a> (`<code>Content-Type</code>`,
